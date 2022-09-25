@@ -139,7 +139,7 @@ private:
             // Read message content and assign it to
             // corresponding tf variables
             t.header.stamp = clock_.now();
-            t.header.frame_id = "world";
+            t.header.frame_id = "odom";
             t.child_frame_id = transform_data.frameID;
 
             // Turtle only exists in 2D, thus we get x and y translation
