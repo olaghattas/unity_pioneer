@@ -105,10 +105,12 @@ struct TransformData {
     double quatX;
     double quatY;
     double quatZ;
+    int sec;
+    unsigned int nanosec;
     std::string frameID;
 };
 
-NLOHMANN_JSONIFY_ALL_THINGS(TransformData, posX, posY, posZ, quatW, quatX, quatY, quatZ, frameID)
+NLOHMANN_JSONIFY_ALL_THINGS(TransformData, posX, posY, posZ, quatW, quatX, quatY, quatZ, sec, nanosec, frameID)
 
 class FramePublisher : public rclcpp::Node {
 public:
@@ -138,7 +140,9 @@ private:
 
             // Read message content and assign it to
             // corresponding tf variables
-            t.header.stamp = clock_.now();
+//            t.header.stamp = clock_.now();
+            t.header.stamp.sec = transform_data.sec;
+            t.header.stamp.nanosec = transform_data.nanosec;
             t.header.frame_id = "odom";
             t.child_frame_id = transform_data.frameID;
 

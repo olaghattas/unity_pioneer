@@ -51,13 +51,13 @@ class RosPublisher(RosSender):
         Returns:
             None: Explicitly return None so behaviour can be
         """
-        message_type = type(self.msg)
-        message = deserialize_message(data, message_type)
-        if hasattr(message, 'header'):
-            message.header.stamp = self.get_clock().now().to_msg()
-            tmp = int(message.header.stamp.nanosec)-int(1E8)
-            message.header.stamp.nanosec = max(tmp, 0)
-        data = serialize_message(message)
+        # message_type = type(self.msg)
+        # message = deserialize_message(data, message_type)
+        # if hasattr(message, 'header'):
+        #     message.header.stamp = self.get_clock().now().to_msg()
+        #     tmp = int(message.header.stamp.nanosec)-int(1E8)
+        #     message.header.stamp.nanosec = max(tmp, 0)
+        # data = serialize_message(message)
 
         self.pub.publish(data)
 
