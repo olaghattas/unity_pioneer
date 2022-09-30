@@ -13,6 +13,7 @@ The pioneer_description package
   <buildtool_depend>ament_cmake</buildtool_depend>
 
 
+  <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>urdf</exec_depend>
