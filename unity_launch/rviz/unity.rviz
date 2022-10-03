@@ -65,7 +65,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: unity_camera/depth/image_raw
+        Value: /smart_home/camera/depth/image_raw
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
@@ -79,7 +79,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: unity_camera/color/image_raw
+        Value: /smart_home/camera/color/image_raw
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -96,9 +96,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 4.201493263244629
+      Max Intensity: 3.5961287021636963
       Min Color: 0; 0; 0
-      Min Intensity: 0.1332273930311203
+      Min Intensity: 0.04797770455479622
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -217,8 +217,6 @@ Visualization Manager:
         All Enabled: false
         back_sonar:
           Value: false
-        base_footprint:
-          Value: false
         base_link:
           Value: true
         camera_link:
@@ -236,8 +234,6 @@ Visualization Manager:
         left_hub:
           Value: false
         left_wheel:
-          Value: false
-        map:
           Value: false
         odom:
           Value: true
@@ -257,33 +253,20 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        map:
-          odom:
-            base_link:
-              back_sonar:
-                {}
-              base_footprint:
-                {}
-              chassis:
-                {}
-              front_sonar:
-                {}
-              left_wheel:
-                left_hub:
-                  {}
-              right_wheel:
-                right_hub:
-                  {}
-              swivel:
-                center_wheel:
-                  center_hubcap:
-                    {}
-              top_plate:
-                camera_link:
-                  laser:
-                    {}
-            scan_link:
+        odom:
+          base_link:
+            back_sonar:
               {}
+            chassis:
+              {}
+            front_sonar:
+              {}
+            top_plate:
+              camera_link:
+                laser:
+                  {}
+          scan_link:
+            {}
       Update Interval: 0
       Value: true
   Enabled: true
