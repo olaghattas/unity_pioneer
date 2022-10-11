@@ -54,6 +54,6 @@ def generate_launch_description():
 
     path = get_package_share_directory('ros_tcp_endpoint')
     ld.add_action(IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(path, 'launch', 'endpoint.py'))))
+        PythonLaunchDescriptionSource(os.path.join(path, 'launch', 'endpoint.launch.py'))))
 
     return ld
