@@ -27,7 +27,7 @@ def main():
             zip_ref.extractall(install_path)
 
     os.system('chmod +x ' + os.path.join(install_path, 'sim', 'pioneerSimulation.x86_64'))
-    os.system(os.path.join(install_path, 'sim', 'pioneerSimulation.x86_64  -batchmode'))
+    os.system(os.path.join(install_path, 'sim', 'pioneerSimulation.x86_64'))
 
 
 if __name__ == '__main__':
