@@ -15,7 +15,7 @@ def generate_launch_description():
                 [
                     FindPackageShare("pioneer_description"),
                     "urdf",
-                    "pioneer3dx.xacro",
+                    "pioneer_smart_home.xacro",
                 ]
             ),
         ]
