@@ -12,13 +12,13 @@ import os
 def generate_launch_description():
     ld = LaunchDescription()
 
-    download_and_run_binary = Node(
-        package="unity_binary",
-        executable="download_and_run_binary",
-        name="download_and_run_binary",
-        output="log"
-    )
-    ld.add_action(download_and_run_binary)
+    # download_and_run_binary = Node(
+    #     package="unity_binary",
+    #     executable="download_and_run_binary",
+    #     name="download_and_run_binary",
+    #     output="log"
+    # )
+    # ld.add_action(download_and_run_binary)
 
     # teleop_twist_keyboard = Node(
     #     package="teleop_twist_keyboard",
@@ -36,8 +36,8 @@ def generate_launch_description():
         executable="rviz2",
         name="rviz2",
         output="log",
-        arguments=["-d", rviz_config_file],
-    )
+        arguments=["-d", rviz_config_file],)
+
     ld.add_action(rviz_node)
 
     json_tf_bridge_node = Node(
@@ -48,12 +48,12 @@ def generate_launch_description():
     )
     ld.add_action(json_tf_bridge_node)
 
-    # yolo_cmd = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource(PathJoinSubstitution([
-    #         get_package_share_directory('yolostate'), 'launch', 'detect_human_depth.launch.py']))
-    # )
+    yolo_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(PathJoinSubstitution([
+            get_package_share_directory('yolostate'), 'launch', 'detecthuman.launch.py']))
+    )
 
-    # ld.add_action(yolo_cmd)
+    ld.add_action(yolo_cmd)
 
     path = get_package_share_directory('pioneer_description')
     ld.add_action(IncludeLaunchDescription(
