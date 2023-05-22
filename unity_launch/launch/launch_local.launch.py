@@ -48,12 +48,12 @@ def generate_launch_description():
     )
     ld.add_action(json_tf_bridge_node)
 
-    yolo_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution([
-            get_package_share_directory('yolostate'), 'launch', 'detecthuman.launch.py']))
-    )
+    # yolo_cmd = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(PathJoinSubstitution([
+    #         get_package_share_directory('yolostate'), 'launch', 'detecthuman.launch.py']))
+    # )
 
-    ld.add_action(yolo_cmd)
+    # ld.add_action(yolo_cmd)
 
     path = get_package_share_directory('pioneer_description')
     ld.add_action(IncludeLaunchDescription(
