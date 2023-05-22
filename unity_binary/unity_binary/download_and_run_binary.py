@@ -26,8 +26,8 @@ def main():
         with zipfile.ZipFile('sim.zip', 'r') as zip_ref:
             zip_ref.extractall(install_path)
 
-    os.system('chmod +x ' + os.path.join(install_path, 'sim', 'pioneerSimulation.x86_64'))
-    os.system(os.path.join(install_path, 'sim', 'pioneerSimulation.x86_64'))
+    os.system('chmod +x ' + os.path.join(install_path, 'sim', 'smart_home_unity_binary.x86_64'))
+    os.system(os.path.join(install_path, 'sim', 'smart_home_unity_binary.x86_64'))
 
 
 if __name__ == '__main__':
